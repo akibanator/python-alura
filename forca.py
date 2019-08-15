@@ -1,19 +1,10 @@
 import random
 
 def jogar():
-    print("---------------------------")
-    print("-----------Forca-----------")
-    print("---------------------------")
+    imprime_mensagem_abertura()
 
-    palavras = []
-    with open("arquivo.txt") as arquivo:
-        for fruta in arquivo:
-                fruta = fruta.strip()
-                palavras.append(fruta)
-        arquivo.close()
+    palavra_secreta = carrega_palavra_secreta()
 
-    numero = random.randrange(0,len(palavras))
-    palavra_secreta = palavras[numero].upper()
     enforcou = False
     acertou = False
     erros = 6
@@ -50,6 +41,23 @@ def jogar():
                 print("Você ganhou!!!!")
     else:
                 print("Você perdeu!!!!")
+
+def imprime_mensagem_abertura():
+    print("---------------------------")
+    print("-----------Forca-----------")
+    print("---------------------------")
+
+def carrega_palavra_secreta():
+    palavras = []
+    with open("arquivo.txt") as arquivo:
+        for fruta in arquivo:
+                fruta = fruta.strip()
+                palavras.append(fruta)
+        arquivo.close()
+
+    numero = random.randrange(0,len(palavras))
+    return palavras[numero].upper()
+
 
 if (__name__ == "__main__"):
     jogar()
