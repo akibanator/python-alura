@@ -9,6 +9,7 @@ def jogar():
     acertou = False
     erros = 6
 
+
     letras_acertadas = ["_" for letra in palavra_secreta]
     letras_faltando = str(letras_acertadas.count("_"))
     print(letras_acertadas)
