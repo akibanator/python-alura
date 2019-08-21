@@ -5,15 +5,13 @@ def jogar():
 
     palavra_secreta = carrega_palavra_secreta()
 
+    letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
+
+    mostra_qtd_letras(letras_acertadas)
+
     enforcou = False
     acertou = False
     erros = 6
-
-
-    letras_acertadas = ["_" for letra in palavra_secreta]
-    letras_faltando = str(letras_acertadas.count("_"))
-    print(letras_acertadas)
-    print("Ainda faltam acertar {} letras".format(letras_faltando))
 
     while (not enforcou and not acertou):
 
@@ -59,6 +57,13 @@ def carrega_palavra_secreta():
     numero = random.randrange(0,len(palavras))
     return palavras[numero].upper()
 
+def inicializa_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
+
+def mostra_qtd_letras(letras_acertadas):
+    letras_faltando = str(letras_acertadas.count("_"))
+    print(letras_acertadas)
+    print("Ainda faltam acertar {} letras".format(letras_faltando))
 
 if (__name__ == "__main__"):
     jogar()
