@@ -40,7 +40,7 @@ def jogar():
 def imprime_mensagem_abertura():
     print("---------------------------")
     print("-----------Forca-----------")
-    print("---------------------------")
+    print("---------------------------") 
 
 def carrega_palavra_secreta():
     palavras = []
